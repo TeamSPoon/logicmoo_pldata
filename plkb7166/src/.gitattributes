@@ -1,0 +1,2 @@
+kb7166_props*.pl filter=lfs diff=lfs merge=lfs -text
+kb7166_assertions*.pl filter=lfs diff=lfs merge=lfs -text
