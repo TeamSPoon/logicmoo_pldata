@@ -1,0 +1,31 @@
+
+:- if( \+ current_predicate(mdep/1)).
+mdep(FA):-
+  '$current_source_module'(M),
+  '$current_typein_module'(CM),
+  M:multifile(FA),
+  M:dynamic(FA),
+  M:export(FA),
+  CM:import(M:FA),
+  CM:export(CM:FA),
+  M:public(FA).
+:- endif.
+
+:-mdep(assertion_content/3).
+:-mdep(assertion_content/4).
+:-mdep(assertion_content/5).
+:-mdep(assertion_content/6).
+:-mdep(assertion_content/7).
+:-mdep(assertion_content/8).
+:-mdep(assertion_content/9).
+:-mdep(assertion_content/10).
+:-mdep(assertion_content/11).
+:-mdep(assertion_content/12).
+:-mdep(assertion_content/13).
+:-mdep(assertion_content_implies/3).
+:-mdep(assertion_content_not/2).
+
+
+:- style_check(-discontiguous).
+:- style_check(-singleton).
+
